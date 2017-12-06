@@ -2,6 +2,8 @@ package com.dodomath.app.webview;
 
 import android.webkit.JavascriptInterface;
 
+import com.dodomath.app.utils.MyLogger;
+
 import io.reactivex.annotations.Nullable;
 
 public class MathBookJSObject {
@@ -19,6 +21,7 @@ public class MathBookJSObject {
      */
     @JavascriptInterface
     public int get_platform_type() {
+        MyLogger.d(this.getClass().getSimpleName(), "get_platform_type has been called");
         return 0;
     }
 
@@ -31,6 +34,13 @@ public class MathBookJSObject {
      */
     @JavascriptInterface
     public void open_wechat_login(@Nullable String loginSuccessfulCb, @Nullable String loingFailedCb) {
+        MyLogger.d(this.getClass().getSimpleName(), "coming soon......");
+        return;
+    }
+
+    @JavascriptInterface
+    public void open_wechat_login() {
+        MyLogger.d(this.getClass().getSimpleName(), "coming soon......");
         return;
     }
 

@@ -16,7 +16,9 @@
 
 package com.dodomath.app;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.webkit.WebView;
 
 import com.manaschaudhari.android_mvvm.ViewModel;
 
@@ -30,6 +32,13 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_main;
+        return R.layout.activity_splash;
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        WebView wv = (WebView)this.findViewById(R.id.main_webview);
+        wv.loadUrl("file:///android_asset/test_mathbookjs.html");
     }
 }

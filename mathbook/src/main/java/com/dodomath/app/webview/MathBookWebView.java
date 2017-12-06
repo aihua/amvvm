@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
+import android.util.AttributeSet;
 import android.view.View;
 import android.webkit.WebView;
 
@@ -14,6 +15,16 @@ public class MathBookWebView extends WebView {
         init();
     }
 
+    public MathBookWebView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        init();
+    }
+
+    public MathBookWebView(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        init();
+    }
+
     protected void init() {
         setupWebView();
     }
@@ -21,6 +32,8 @@ public class MathBookWebView extends WebView {
 //    private void loadH5(RequestHolder params) {
 //        loadDataWithBaseURL("", params.getH5String(), "text/html", "utf-8", "");
 //    }
+
+
 
     @SuppressLint({"SetJavaScriptEnabled", "AddJavascriptInterface"})
     private void setupWebView() {

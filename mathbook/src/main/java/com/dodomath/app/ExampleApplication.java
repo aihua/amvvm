@@ -24,6 +24,8 @@ import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
 public class ExampleApplication extends Application {
+
+    public static Application globalAppContext;
     public static RefWatcher getRefWatcher(Context context) {
         ExampleApplication application = (ExampleApplication) context.getApplicationContext();
         return application.refWatcher;
@@ -34,6 +36,7 @@ public class ExampleApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        this.globalAppContext = this;
         refWatcher = LeakCanary.install(this);
         BindingUtils.setDefaultBinder(BindingAdapters.defaultBinder);
     }

@@ -1,4 +1,7 @@
 
+1. How to cache image/audio/video etc. so that web page can load quickly.
+
+
 
 1. Create the app and JS interface.
 

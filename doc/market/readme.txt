@@ -16,5 +16,5 @@ APP的包名：
 com.dodomath.app
 
 应用的名字：
-Dodo数学
+渡渡数学
 

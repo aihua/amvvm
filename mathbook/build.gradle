@@ -20,8 +20,18 @@ android {
         exclude 'META-INF/rxjava.properties'
     }
 
+    signingConfigs {
+        release {
+            storeFile file("../doc/dodomath")
+            storePassword "dodomath"
+            keyAlias "for_android_mathbook"
+            keyPassword "dodomath"
+        }
+    }
+
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }

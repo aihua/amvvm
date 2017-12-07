@@ -32,13 +32,16 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_splash;
+        //return R.layout.activity_splash;
+        return R.layout.page_login;
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        WebView wv = (WebView)this.findViewById(R.id.main_webview);
-        wv.loadUrl("file:///android_asset/test_mathbookjs.html");
+//        WebView wv = (WebView)this.findViewById(R.id.main_webview);
+//        wv.loadUrl("file:///android_asset/test_mathbookjs.html");
     }
 }
+
+

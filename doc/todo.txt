@@ -5,10 +5,13 @@
 
 1. Create the app and JS interface.
 
-2. Design the API between h5 and native:
+2. Design the API between h5 and native
 
 -- close the screen
 -- call wechat login
 -- call wechat pay
 
 com.dodobaike.mathbook
+
+
+ed1809a700222aaa067d1108795ffbed

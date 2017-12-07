@@ -19,15 +19,16 @@ package com.dodomath.app;
 import android.app.Application;
 import android.content.Context;
 
+import com.dodomath.app.tpl.ThirdPartyLoginHelper;
 import com.manaschaudhari.android_mvvm.utils.BindingUtils;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
-public class ExampleApplication extends Application {
+public class MathBookApplication extends Application {
 
     public static Application globalAppContext;
     public static RefWatcher getRefWatcher(Context context) {
-        ExampleApplication application = (ExampleApplication) context.getApplicationContext();
+        MathBookApplication application = (MathBookApplication) context.getApplicationContext();
         return application.refWatcher;
     }
 
@@ -37,7 +38,16 @@ public class ExampleApplication extends Application {
     public void onCreate() {
         super.onCreate();
         this.globalAppContext = this;
+        init();
+    }
+
+    private void init() {
+
         refWatcher = LeakCanary.install(this);
+
         BindingUtils.setDefaultBinder(BindingAdapters.defaultBinder);
+
+        ThirdPartyLoginHelper.initSDK(this);
+
     }
 }

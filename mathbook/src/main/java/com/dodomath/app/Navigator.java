@@ -26,4 +26,6 @@ public interface Navigator {
     void navigateToTwoWayBindingDemo();
 
     void navigateToCalculatorDemo();
+
+    void navigateToWechatLogin();
 }

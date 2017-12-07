@@ -29,7 +29,7 @@ import android.view.View;
 import com.manaschaudhari.android_mvvm.ViewModel;
 import com.manaschaudhari.android_mvvm.adapters.ViewModelBinder;
 import com.manaschaudhari.android_mvvm.adapters.ViewProvider;
-import com.dodomath.app.BR;
+
 import com.manaschaudhari.android_mvvm.utils.BindingUtils;
 
 import java.util.List;
@@ -65,7 +65,7 @@ public class BindingAdapters {
 
         // Previous adapter should get deallocated
         if (previousAdapter != null)
-            ExampleApplication.getRefWatcher(recyclerView.getContext()).watch(previousAdapter);
+            MathBookApplication.getRefWatcher(recyclerView.getContext()).watch(previousAdapter);
     }
 
     /**
@@ -78,7 +78,7 @@ public class BindingAdapters {
 
         // Previous adapter should get deallocated
         if (previousAdapter != null)
-            ExampleApplication.getRefWatcher(viewPager.getContext()).watch(previousAdapter);
+            MathBookApplication.getRefWatcher(viewPager.getContext()).watch(previousAdapter);
     }
 
     @BindingConversion

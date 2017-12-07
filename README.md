@@ -25,3 +25,7 @@ Dodo数学
 微信开发者账号：
 移动APPID：wx05a8ca55cde9cd0c
 移动APPSerect：e9444e6dff6accd990e6203629834b81
+
+ShareSDK:
+Appkey : 22e5da782e0d8
+App Secret : 7e30da9a00f62fc5ef19212c52a4f9a2

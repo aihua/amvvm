@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.dodomath.app.MainViewModel" />
+            type="com.dodomath.app.LoginViewModel" />
     </data>
 
     <FrameLayout
@@ -19,17 +19,21 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
-            android:src="@drawable/home" />
+            android:src="@drawable/home"
+            android:visibility="gone" />
 
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <ImageView
+                android:id="@+id/iv_home_boat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="300dip"
+                android:scaleType="fitXY"
                 android:src="@drawable/home_boat" />
 
             <ImageView
@@ -38,16 +42,39 @@
                 android:src="@drawable/home_fg" />
 
             <ImageView
+                android:id="@+id/iv_home_wave_bg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:scaleType="fitEnd"
                 android:src="@drawable/home_wave_bg" />
 
             <ImageView
+                android:id="@+id/iv_home_wave_fg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:scaleType="fitEnd"
                 android:src="@drawable/home_wave_fg" />
+
+            <ImageView
+                android:id="@+id/iv_home_guest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/iv_home_wechat"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dip"
+                android:src="@drawable/home_guest" />
+
+            <ImageView
+                android:onClick="@{vm.onWechatLoginClick}"
+                android:id="@+id/iv_home_wechat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="60dip"
+                android:src="@drawable/home_wechat" />
 
         </RelativeLayout>
 

@@ -20,6 +20,8 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.widget.Toast;
 
+import com.dodomath.app.tpl.ThirdPartyLoginHelper;
+import com.dodomath.app.utils.MyLogger;
 import com.manaschaudhari.android_mvvm.MvvmActivity;
 import com.dodomath.app.adapters.ItemListActivity;
 import com.dodomath.app.adapters.MessageHelper;
@@ -55,6 +57,12 @@ public abstract class BaseActivity extends MvvmActivity {
             @Override
             public void navigateToCalculatorDemo() {
                 navigate(CalculatorActivity.class);
+            }
+
+            @Override
+            public void navigateToWechatLogin() {
+                //MyLogger.d("Wechat", "wechat clicked");
+                new ThirdPartyLoginHelper().loginWithWechat();
             }
 
             private void navigate(Class<?> destination) {

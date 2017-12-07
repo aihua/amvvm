@@ -1,2 +1,3 @@
 include ':mathbook', ':android-mvvm', ':rxjava-compat'
 rootProject.name = 'android-mvvm-root'
+include ':thirdPartyLoginDemo'

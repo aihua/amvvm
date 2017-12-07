@@ -16,32 +16,27 @@
 
 package com.dodomath.app;
 
-import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.webkit.WebView;
 
 import com.manaschaudhari.android_mvvm.ViewModel;
 
-public class SplashActivity extends BaseActivity {
+import io.reactivex.functions.Action;
 
+
+public class LoginViewModel implements ViewModel {
     @NonNull
-    @Override
-    protected ViewModel createViewModel() {
-        return new LoginViewModel(getNavigator());
+    private final Navigator navigator;
+
+    public LoginViewModel(@NonNull Navigator navigator) {
+
+        this.navigator = navigator;
     }
 
-    @Override
-    protected int getLayoutId() {
-        //return R.layout.activity_splash;
-        return R.layout.page_login;
-    }
+    public final Action onWechatLoginClick = new Action() {
+        @Override
+        public void run() throws Exception {
+            navigator.navigateToWechatLogin();
+        }
+    };
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-//        WebView wv = (WebView)this.findViewById(R.id.main_webview);
-//        wv.loadUrl("file:///android_asset/test_mathbookjs.html");
-    }
 }
-
-

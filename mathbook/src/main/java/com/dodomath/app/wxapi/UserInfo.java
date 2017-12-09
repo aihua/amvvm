@@ -1,4 +1,4 @@
-package com.dodomath.app.tpl;
+package com.dodomath.app.wxapi;
 
 public class UserInfo {
 	private String userIcon;

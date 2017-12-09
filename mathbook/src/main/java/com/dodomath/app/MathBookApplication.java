@@ -19,7 +19,7 @@ package com.dodomath.app;
 import android.app.Application;
 import android.content.Context;
 
-import com.dodomath.app.tpl.ThirdPartyLoginHelper;
+import com.dodomath.app.wxapi.ThirdPartyLoginHelper;
 import com.manaschaudhari.android_mvvm.utils.BindingUtils;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;

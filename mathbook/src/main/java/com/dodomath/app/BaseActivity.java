@@ -20,8 +20,8 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.widget.Toast;
 
-import com.dodomath.app.tpl.ThirdPartyLoginHelper;
-import com.dodomath.app.utils.MyLogger;
+import com.dodomath.app.wxapi.ThirdPartyLoginHelper;
+import com.dodomath.app.utils.AndroidUtils;
 import com.manaschaudhari.android_mvvm.MvvmActivity;
 import com.dodomath.app.adapters.ItemListActivity;
 import com.dodomath.app.adapters.MessageHelper;
@@ -61,8 +61,34 @@ public abstract class BaseActivity extends MvvmActivity {
 
             @Override
             public void navigateToWechatLogin() {
-                //MyLogger.d("Wechat", "wechat clicked");
-                new ThirdPartyLoginHelper().loginWithWechat();
+                new ThirdPartyLoginHelper().loginWithWechat(new Runnable(){
+                    @Override
+                    public void run() {
+                        navigateToWechatLoginWebPage();
+                    }
+                });
+            }
+
+            @Override
+            public void navigateToGuestLoginWebPage() {
+                navigateToWeb("file:///android_asset/mb_index.html?login_type=wechat&wechat_id=not_exist");
+            }
+
+            @Override
+            public void navigateToWechatLoginWebPage() {
+                navigateToWeb("file:///android_asset/mb_index.html?login_type=wechat&wechat_id=" + ThirdPartyLoginHelper.tryToGetWechatId());
+            }
+
+            @Override
+            public void exitApp() {
+                //TODO:
+                AndroidUtils.exitApp();
+            }
+
+            private void navigateToWeb(String url) {
+                Intent intent = new Intent(BaseActivity.this, HomeWebPageActivity.class);
+                intent.putExtra(HomeWebPageActivity.KEY_URL, url);
+                startActivity(intent);
             }
 
             private void navigate(Class<?> destination) {

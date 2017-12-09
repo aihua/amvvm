@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+
+<p><h2>Read and parse url:</h2></p>
+<p id="url_">URL....</p>
+<p id="url_parameter_login_type">EMPTY LOGIN TYPE</p>
+<p id="url_parameter_wechat_id">EMPTY WECHAT ID</p>
+
+<script>
+
+    function getParameterByName(name) {
+    url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+    results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+document.getElementById("url_").innerHTML = "Current url is:  " + window.location.href;
+
+var url_parameter_login_type = getParameterByName('login_type');
+document.getElementById("url_parameter_login_type").innerHTML = "login_type=" + url_parameter_login_type;
+
+var url_parameter_wechat_id = getParameterByName('wechat_id');
+document.getElementById("url_parameter_wechat_id").innerHTML = "wechat_id=" + url_parameter_wechat_id;
+
+
+</script>
+
+
+<p></p>
+<h2>Test MathBook JS API From Native Code</h2>
+<p></p>
+
+<button type="button"
+        onclick="mbjs.exit_app();">call: 退出APP
+</button>
+
+<button type="button"
+        onclick="mbjs.get_platform_type();">call: get_platform_type
+</button>
+
+<!--<button type="button"-->
+<!--onclick="mbjs.open_wechat_login();">call: open_wechat_login-->
+<!--</button>-->
+
+<button type="button"
+        onclick="mbjs.close_screen();">call: close_screen
+</button>
+
+
+</body>
+</html>

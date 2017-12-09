@@ -12,6 +12,7 @@ android {
         versionName "1.0"
     }
 
+
     dataBinding {
         enabled = true
     }
@@ -57,10 +58,8 @@ dependencies {
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4'
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4'
 
-    compile files('libs_share/MobCommons-2016.0811.1207.jar')
-    compile files('libs_share/MobTools-2016.0811.1207.jar')
-    compile files('libs_share/ShareSDK-Core-2.7.5.jar')
-    compile files('libs_share/ShareSDK-Wechat-2.7.5.jar')
-    compile files('libs_share/ShareSDK-Wechat-Core-2.7.5.jar')
+    compile files('libs_share/ShareSDK-Core-2.5.9.jar')
+    compile files('libs_share/ShareSDK-Wechat-2.5.9.jar')
+    compile files('libs_share/ShareSDK-Wechat-Core-2.5.9.jar')
 
 }

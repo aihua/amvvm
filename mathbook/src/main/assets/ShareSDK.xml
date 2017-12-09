@@ -109,13 +109,13 @@
         BypassApproval="false"
         Enable="true" />
     
-    <WechatMoments
-        Id="5"
-        SortId="5"
-        AppId="wxe3cf5ea52f5ad0aa"
-        AppSecret="ec1227952e925bd318b1bb3b87b2e522"
-        BypassApproval="false"
-        Enable="true" />
+    <!--<WechatMoments-->
+        <!--Id="5"-->
+        <!--SortId="5"-->
+        <!--AppId="wxe3cf5ea52f5ad0aa"-->
+        <!--AppSecret="ec1227952e925bd318b1bb3b87b2e522"-->
+        <!--BypassApproval="false"-->
+        <!--Enable="true" />-->
         
 	<!--<WechatFavorite-->
         <!--Id="6"-->

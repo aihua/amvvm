@@ -3,6 +3,8 @@
     package="com.dodomath.app">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".MathBookApplication"
@@ -13,7 +15,7 @@
         android:theme="@style/MathTheme.FullScreen">
 
         <activity
-            android:name=".SplashActivity"
+            android:name=".LoginActivity"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +24,29 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity"></activity>
+
+        <activity
+            android:name=".HomeWebPageActivity"
+            android:screenOrientation="landscape" />
+
+        <!-- 微信分享回调 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- TODO: below are sample code -->
+
+        <!--<activity-->
+        <!--android:name=".MainActivity"-->
+        <!--android:label="@string/app_name_test">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.intent.action.MAIN" />-->
+
+        <!--<category android:name="android.intent.category.LAUNCHER" />-->
+        <!--</intent-filter>-->
+        <!--</activity>-->
         <activity
             android:name=".adapters.ItemListActivity"
             android:label="@string/title_adapters" />
@@ -36,6 +60,8 @@
         <activity
             android:name=".calculator_example.CalculatorActivity"
             android:label="@string/title_calculator"></activity>
+
+
     </application>
 
 </manifest>

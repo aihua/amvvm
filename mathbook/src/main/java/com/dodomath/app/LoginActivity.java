@@ -9,7 +9,7 @@ import android.webkit.WebView;
 
 import com.manaschaudhari.android_mvvm.ViewModel;
 
-public class SplashActivity extends BaseActivity {
+public class LoginActivity extends BaseActivity {
 
     @NonNull
     @Override
@@ -19,14 +19,12 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     protected int getLayoutId() {
-        //return R.layout.activity_splash;
         return R.layout.page_login;
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
         //TODO:
         //startAnimation();
@@ -41,6 +39,7 @@ public class SplashActivity extends BaseActivity {
     }
 
     public void startAnimation() {
+        //TODO:
         View waveFg = findViewById(R.id.iv_home_wave_fg);
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.wave_fg_left);
 

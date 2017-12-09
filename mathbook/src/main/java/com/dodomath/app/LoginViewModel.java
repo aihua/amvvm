@@ -39,4 +39,11 @@ public class LoginViewModel implements ViewModel {
         }
     };
 
+    public final Action onGuestLoginClick = new Action() {
+        @Override
+        public void run() throws Exception {
+            navigator.navigateToGuestLoginWebPage();
+        }
+    };
+
 }

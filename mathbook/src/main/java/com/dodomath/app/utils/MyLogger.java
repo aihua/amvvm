@@ -7,6 +7,6 @@ import com.dodomath.app.MathBookApplication;
 public class MyLogger {
 
     public static void d(String tag, String msg) {
-        Toast.makeText(MathBookApplication.globalAppContext, msg, Toast.LENGTH_LONG).show();
+        Toast.makeText(MathBookApplication.globalAppContext, msg, Toast.LENGTH_SHORT).show();
     }
 }

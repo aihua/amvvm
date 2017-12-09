@@ -2,6 +2,7 @@ package com.dodomath.app.webview;
 
 import android.webkit.JavascriptInterface;
 
+import com.dodomath.app.utils.AndroidUtils;
 import com.dodomath.app.utils.MyLogger;
 
 import io.reactivex.annotations.Nullable;
@@ -98,6 +99,7 @@ public class MathBookJSObject {
      */
     @JavascriptInterface
     public void exit_app() {
+        AndroidUtils.exitApp();
         return;
     }
 

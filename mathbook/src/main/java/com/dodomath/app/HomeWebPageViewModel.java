@@ -16,22 +16,20 @@
 
 package com.dodomath.app;
 
-public interface Navigator {
-    void openDetailsPage(Item item);
+import android.support.annotation.NonNull;
 
-    void navigateToFunctionalDemo();
+import com.manaschaudhari.android_mvvm.ViewModel;
 
-    void navigateToAdapterDemo();
+import io.reactivex.functions.Action;
 
-    void navigateToTwoWayBindingDemo();
 
-    void navigateToCalculatorDemo();
+public class HomeWebPageViewModel implements ViewModel {
+    @NonNull
+    private final Navigator navigator;
 
-    void navigateToWechatLogin();
+    public HomeWebPageViewModel(@NonNull Navigator navigator) {
 
-    void navigateToGuestLoginWebPage();
+        this.navigator = navigator;
+    }
 
-    void navigateToWechatLoginWebPage();
-
-    void exitApp();
 }

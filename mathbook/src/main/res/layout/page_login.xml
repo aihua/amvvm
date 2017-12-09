@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="vm"
             type="com.dodomath.app.LoginViewModel" />
@@ -78,6 +79,7 @@
                 android:layout_above="@+id/iv_home_wechat"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="20dip"
+                android:onClick="@{vm.onGuestLoginClick}"
                 android:src="@drawable/home_guest" />
 
             <ImageView

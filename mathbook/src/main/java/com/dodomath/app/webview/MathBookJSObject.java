@@ -103,4 +103,36 @@ public class MathBookJSObject {
         return;
     }
 
+    /**
+     * H5页面通知APP资源全部下载完成
+     */
+    @JavascriptInterface
+    public void h5_predownload_finished() {
+        AndroidUtils.h5PredownloadFinished();
+        return;
+    }
+
+
+    /**
+     * H5页面通知APP当前资源的下载进度
+     *
+     * @param percent 资源的下载进度  100 表示全部下载完成。
+     * @param resourceType 资源的类型  0--全部资源  1--图片 2--音频 3--视频
+     *
+     */
+    @JavascriptInterface
+    public void h5_predownload_progress(int percent, int resourceType) {
+        AndroidUtils.h5PredownloadProgress(percent, resourceType);
+        return;
+    }
+
+    /**
+     * H5页面通知APP当前资源的下载进度
+     */
+    @JavascriptInterface
+    public void h5_predownload_error(String err_msg) {
+        AndroidUtils.h5PredownloadError(err_msg);
+        return;
+    }
+
 }

@@ -33,5 +33,7 @@ public interface Navigator {
 
     void navigateToWechatLoginWebPage();
 
+    void navigateToLoginPage();
+
     void exitApp();
 }

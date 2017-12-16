@@ -85,16 +85,24 @@ public abstract class BaseActivity extends MvvmActivity {
                 AndroidUtils.exitApp();
             }
 
+            @Override
+            public void navigateToLoginPage() {
+                navigate(LoginActivity.class);
+            }
+
             private void navigateToWeb(String url) {
                 Intent intent = new Intent(BaseActivity.this, HomeWebPageActivity.class);
                 intent.putExtra(HomeWebPageActivity.KEY_URL, url);
                 startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
 
             private void navigate(Class<?> destination) {
                 Intent intent = new Intent(BaseActivity.this, destination);
                 startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
+
         };
     }
 

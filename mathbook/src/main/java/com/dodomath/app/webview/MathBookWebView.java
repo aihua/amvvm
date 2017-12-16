@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
+import android.webkit.CookieManager;
 import android.webkit.WebView;
 
 public class MathBookWebView extends WebView {
@@ -41,6 +42,8 @@ public class MathBookWebView extends WebView {
 
         setBackgroundColor(Color.TRANSPARENT);
         getSettings().setJavaScriptEnabled(true);
+        CookieManager.getInstance().setAcceptThirdPartyCookies(this, true);
+        CookieManager.getInstance().setAcceptCookie(true);
         MathBookJSObject jsobject = new MathBookJSObject();
         addJavascriptInterface(jsobject, "mbjs");
         // api 11以上有个漏洞，要remove

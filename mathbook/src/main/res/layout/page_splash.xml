@@ -6,18 +6,16 @@
 
         <variable
             name="vm"
-            type="com.dodomath.app.MainViewModel" />
+            type="com.dodomath.app.LoginViewModel" />
     </data>
 
     <FrameLayout
+        android:id="@+id/page_bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="@drawable/logo_mb"
         android:orientation="horizontal">
-
-        <com.dodomath.app.webview.MathBookWebView
-            android:id="@+id/main_webview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
 
     </FrameLayout>
 </layout>

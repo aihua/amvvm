@@ -46,4 +46,8 @@ public class LoginViewModel implements ViewModel {
         }
     };
 
+    public void navigateToLoginPage() {
+            navigator.navigateToLoginPage();
+    };
+
 }

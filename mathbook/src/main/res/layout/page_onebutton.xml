@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.dodomath.app.LoginViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/bg_home"></include>
+
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:layout_marginBottom="50dp"
+            android:layout_marginRight="50dp">
+
+            <ImageView
+                android:id="@+id/iv_start_study"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{vm.onStartStudyClick}"
+                android:src="@drawable/btn_start_study"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{vm.onPayClick}"
+                android:src="@drawable/btn_pay"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+</layout>
+

@@ -23,13 +23,11 @@ import com.manaschaudhari.android_mvvm.ViewModel;
 
 import io.reactivex.functions.Action;
 
-
 public class LoginViewModel implements ViewModel {
     @NonNull
     private final Navigator navigator;
 
     public LoginViewModel(@NonNull Navigator navigator) {
-
         this.navigator = navigator;
     }
 
@@ -48,8 +46,23 @@ public class LoginViewModel implements ViewModel {
         }
     };
 
+    public final Action onStartStudyClick = new Action() {
+        @Override
+        public void run() throws Exception {
+            navigator.navigateToStartStudyWebPage();
+        }
+    };
+
+    public final Action onPayClick = new Action() {
+        @Override
+        public void run() throws Exception {
+            navigator.navigateToPayWebPage();
+        }
+    };
+
     public void navigateToLoginPage() {
             navigator.navigateToLoginPage();
     };
+
 
 }

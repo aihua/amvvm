@@ -6,6 +6,8 @@ import com.dodomath.app.MathBookApplication;
 import com.dodomath.app.utils.AndroidUtils;
 import com.dodomath.app.utils.PrefUtil;
 
+import java.util.Random;
+
 public class UserData {
 
     public static UserData instance = new UserData();
@@ -26,10 +28,6 @@ public class UserData {
     private String userId = "";
     private UserType userType = UserType.UNKNOWN;
 
-    //Read from server
-    private UserStatus userStatus = UserStatus.UNKNOWN;
-    private String urlForStatus = "";
-    private String messageForStatus = "";
 
     public UserType getUserType() {
         return userType;
@@ -39,13 +37,46 @@ public class UserData {
         return TextUtils.isEmpty(userId) ? AndroidUtils.getAndroidId(MathBookApplication.globalAppContext) : userId;
     }
 
+    public String getUserTypeAsString() {
+        return String.valueOf(userType.ordinal());
+    }
+
     public String getGuestEvaluateUrl() {
-        return "file:///android_asset/mb_guest_evaluate_index.html?user_type=guest&user_id=" + getUserId();
+        return "file:///android_asset/mb_guest_evaluate_index.html?user_type=" + getUserTypeAsString() + "&user_id=" + getUserId();
+    }
+
+    public String getStartStudyUrl() {
+        return "file:///android_asset/mb_start_study_index.html?user_type=" + getUserTypeAsString() + "&user_id=" + getUserId();
+    }
+
+    public String getPayUrl() {
+        return "file:///android_asset/mb_pay_index.html?user_type=" + getUserTypeAsString() + "&user_id=" + getUserId();
     }
 
     public void loginAsGuest() {
-        userId = AndroidUtils.getAndroidId(MathBookApplication.globalAppContext);
-        userType = UserType.GUEST;
+        login(UserType.GUEST, AndroidUtils.getAndroidId(MathBookApplication.globalAppContext));
+    }
+
+    public void loginAsWechat(String wechatOpenid) {
+        login(UserType.WECHAT, wechatOpenid);
+    }
+
+    private void login(UserType userType, String userId) {
+        this.userType = userType;
+        this.userId = userId;
         saveData();
     }
+
+
+    //Read from server
+    //private UserStatus userStatus = UserStatus.UNKNOWN;
+    private UserStatus userStatus = UserStatus.values()[new Random().nextInt(3) + 1];
+
+    private String urlForStatus = "";
+    private String messageForStatus = "";
+
+    public UserStatus getUserStatus() {
+        return userStatus;
+    }
+
 }

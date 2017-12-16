@@ -37,6 +37,9 @@
         <activity
             android:name=".HomeWebPageActivity"
             android:screenOrientation="landscape" />
+        <activity
+            android:name=".DodoHomeActivity"
+            android:screenOrientation="landscape" />
 
         <!-- 微信分享回调 -->
         <activity

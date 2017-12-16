@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+
+<p><h1>Select Product And Pay</h1></p>
+<p id="url_">URL....</p>
+<p id="url_parameter_login_type">EMPTY LOGIN TYPE</p>
+<p id="url_parameter_wechat_id">EMPTY WECHAT ID</p>
+
+<script>
+
+    function getParameterByName(name) {
+    url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+    results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+document.getElementById("url_").innerHTML = "Current url is:  " + window.location.href;
+
+var url_parameter_login_type = getParameterByName('user_type');
+document.getElementById("url_parameter_login_type").innerHTML = "user_type=" + url_parameter_login_type;
+
+var url_parameter_wechat_id = getParameterByName('user_id');
+document.getElementById("url_parameter_wechat_id").innerHTML = "user_id=" + url_parameter_wechat_id;
+
+
+</script>
+
+
+</body>
+</html>

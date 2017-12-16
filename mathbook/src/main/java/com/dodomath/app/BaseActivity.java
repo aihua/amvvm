@@ -76,8 +76,24 @@ public abstract class BaseActivity extends MvvmActivity {
             }
 
             @Override
+            public void navigateToStartStudyWebPage() {
+                navigateToWeb(UserData.instance.getStartStudyUrl());
+            }
+
+            @Override
+            public void navigateToPayWebPage() {
+                navigateToWeb(UserData.instance.getPayUrl());
+            }
+
+            @Override
             public void navigateToWechatLoginWebPage() {
-                navigateToWeb("file:///android_asset/mb_index.html?login_type=wechat&wechat_id=" + ThirdPartyLoginHelper.tryToGetWechatId());
+                navigateToWeb("file:///android_asset/mb_index.html?login_type=wechat&user_id=" + ThirdPartyLoginHelper.tryToGetWechatId());
+                UserData.instance.loginAsWechat(ThirdPartyLoginHelper.tryToGetWechatId());
+            }
+
+            @Override
+            public void navigateToDodoNativeHome() {
+                navigate(DodoHomeActivity.class);
             }
 
             @Override

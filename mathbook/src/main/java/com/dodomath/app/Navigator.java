@@ -35,5 +35,11 @@ public interface Navigator {
 
     void navigateToLoginPage();
 
+    void navigateToStartStudyWebPage();
+
+    void navigateToDodoNativeHome();
+
+    void navigateToPayWebPage();
+
     void exitApp();
 }

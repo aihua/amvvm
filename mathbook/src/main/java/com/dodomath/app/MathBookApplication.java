@@ -19,6 +19,7 @@ package com.dodomath.app;
 import android.app.Application;
 import android.content.Context;
 
+import com.dodomath.app.model.UserData;
 import com.dodomath.app.wxapi.ThirdPartyLoginHelper;
 import com.manaschaudhari.android_mvvm.utils.BindingUtils;
 import com.squareup.leakcanary.LeakCanary;
@@ -42,6 +43,8 @@ public class MathBookApplication extends Application {
     }
 
     private void init() {
+
+        UserData.instance.loadData();
 
         refWatcher = LeakCanary.install(this);
 

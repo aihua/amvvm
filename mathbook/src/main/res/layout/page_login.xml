@@ -19,80 +19,100 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
-            android:src="@drawable/home"
-            android:visibility="gone" />
+            android:src="@drawable/home" />
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#34000000" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:visibility="visible">
 
-            <ImageView
-                android:id="@+id/iv_home_boat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="300dip"
-                android:scaleType="fitXY"
-                android:src="@drawable/home_boat" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="fitXY"
-                android:src="@drawable/home_fg" />
-
-            <ImageView
-                android:id="@+id/iv_home_wave_bg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:scaleType="fitEnd"
-                android:src="@drawable/home_wave_bg"
-                android:visibility="gone" />
-
-
             <LinearLayout
-                android:id="@+id/iv_home_wave_fg"
-                android:layout_width="7040px"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="50dp"
+                android:layout_marginRight="50dp"
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="3520px"
-                    android:layout_height="672px"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/home_wave_fg" />
+                    android:id="@+id/iv_home_guest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{vm.onGuestLoginClick}"
+                    android:src="@drawable/home_guest" />
+
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="1dp" />
 
                 <ImageView
-                    android:layout_width="3520px"
-                    android:layout_height="672px"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/home_wave_fg" />
+                    android:id="@+id/iv_home_wechat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{vm.onWechatLoginClick}"
+                    android:src="@drawable/home_wechat" />
             </LinearLayout>
 
-            <ImageView
-                android:id="@+id/iv_home_guest"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/iv_home_wechat"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="20dip"
-                android:onClick="@{vm.onGuestLoginClick}"
-                android:src="@drawable/home_guest" />
-
-            <ImageView
-                android:id="@+id/iv_home_wechat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="60dip"
-                android:onClick="@{vm.onWechatLoginClick}"
-                android:src="@drawable/home_wechat" />
 
         </RelativeLayout>
+
+        <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:visibility="visible">-->
+
+        <!--<ImageView-->
+        <!--android:id="@+id/iv_home_boat"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginRight="300dip"-->
+        <!--android:scaleType="fitXY"-->
+        <!--android:src="@drawable/home_boat" />-->
+
+        <!--<ImageView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:scaleType="fitXY"-->
+        <!--android:src="@drawable/home_fg" />-->
+
+        <!--<ImageView-->
+        <!--android:id="@+id/iv_home_wave_bg"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:scaleType="fitEnd"-->
+        <!--android:src="@drawable/home_wave_bg"-->
+        <!--android:visibility="gone" />-->
+
+
+        <!--<LinearLayout-->
+        <!--android:id="@+id/iv_home_wave_fg"-->
+        <!--android:layout_width="7040px"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<ImageView-->
+        <!--android:layout_width="3520px"-->
+        <!--android:layout_height="672px"-->
+        <!--android:scaleType="fitXY"-->
+        <!--android:src="@drawable/home_wave_fg" />-->
+
+        <!--<ImageView-->
+        <!--android:layout_width="3520px"-->
+        <!--android:layout_height="672px"-->
+        <!--android:scaleType="fitXY"-->
+        <!--android:src="@drawable/home_wave_fg" />-->
+        <!--</LinearLayout>-->
+
+
+        <!--</RelativeLayout>-->
 
     </FrameLayout>
 

@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
+import com.dodomath.app.model.UserData;
+import com.dodomath.app.model.UserType;
 import com.manaschaudhari.android_mvvm.ViewModel;
 
 public class SplashActivity extends BaseActivity {
@@ -40,7 +42,19 @@ public class SplashActivity extends BaseActivity {
     }
 
     private void gotoNextPage() {
-        getNavigator().navigateToLoginPage();
+        //TODO: try to move this to ViewModel.
+        switch (UserData.instance.getUserType()) {
+            case GUEST:
+                getNavigator().navigateToGuestLoginWebPage();
+                break;
+            case UNKNOWN:
+                getNavigator().navigateToLoginPage();
+                break;
+            case WECHAT:
+                break;
+            default:
+                break;
+        }
     }
 
     private Runnable delayRunnable = new Runnable() {

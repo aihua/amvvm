@@ -18,6 +18,7 @@ package com.dodomath.app;
 
 import android.support.annotation.NonNull;
 
+import com.dodomath.app.model.UserData;
 import com.manaschaudhari.android_mvvm.ViewModel;
 
 import io.reactivex.functions.Action;
@@ -43,6 +44,7 @@ public class LoginViewModel implements ViewModel {
         @Override
         public void run() throws Exception {
             navigator.navigateToGuestLoginWebPage();
+            UserData.instance.loginAsGuest();
         }
     };
 

@@ -38,16 +38,6 @@ public class LoginActivity extends BaseActivity {
         super.onPause();
     }
 
-    public void startAnimation() {
-        //TODO:
-        View waveFg = findViewById(R.id.iv_home_wave_fg);
-        Animation animation = AnimationUtils.loadAnimation(this, R.anim.wave_fg_left);
-
-        animation.setRepeatMode(Animation.RESTART);
-        waveFg.startAnimation(animation);
-
-
-    }
 }
 
 

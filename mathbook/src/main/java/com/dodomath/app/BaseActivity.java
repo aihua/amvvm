@@ -20,6 +20,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.widget.Toast;
 
+import com.dodomath.app.model.UserData;
 import com.dodomath.app.wxapi.ThirdPartyLoginHelper;
 import com.dodomath.app.utils.AndroidUtils;
 import com.manaschaudhari.android_mvvm.MvvmActivity;
@@ -71,7 +72,7 @@ public abstract class BaseActivity extends MvvmActivity {
 
             @Override
             public void navigateToGuestLoginWebPage() {
-                navigateToWeb("file:///android_asset/mb_index.html?login_type=wechat&wechat_id=not_exist");
+                navigateToWeb(UserData.instance.getGuestEvaluateUrl());
             }
 
             @Override

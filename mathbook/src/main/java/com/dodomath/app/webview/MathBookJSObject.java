@@ -39,8 +39,23 @@ public class MathBookJSObject {
         return;
     }
 
+    /**
+     * 调用原生的开始学习页面
+     *
+     */
     @JavascriptInterface
-    public void open_wechat_login() {
+    public void open_start_study() {
+        //TODO:
+        return;
+    }
+
+    /**
+     * 退出登录
+     *
+     */
+    @JavascriptInterface
+    public void logout() {
+        //TODO： 游客登出后，不可以再登录
         MyLogger.d(this.getClass().getSimpleName(), "coming soon......");
         return;
     }
@@ -63,16 +78,6 @@ public class MathBookJSObject {
     @JavascriptInterface
     public String get_wechat_id() {
         return "";
-    }
-
-    /**
-     * 退出微信登录
-     *
-     * @return
-     */
-    @JavascriptInterface
-    public void exit_wechat_login() {
-        return;
     }
 
     /**

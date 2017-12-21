@@ -17,7 +17,10 @@
 package com.dodomath.app;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.support.annotation.NonNull;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dodomath.app.model.UserData;
@@ -62,7 +65,7 @@ public abstract class BaseActivity extends MvvmActivity {
 
             @Override
             public void navigateToWechatLogin() {
-                new ThirdPartyLoginHelper().loginWithWechat(new Runnable(){
+                new ThirdPartyLoginHelper().loginWithWechat(new Runnable() {
                     @Override
                     public void run() {
                         navigateToWechatLoginWebPage();
@@ -131,6 +134,34 @@ public abstract class BaseActivity extends MvvmActivity {
                 Toast.makeText(BaseActivity.this, message, Toast.LENGTH_SHORT).show();
             }
         };
+    }
+
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus) {
+            startAnimationFor(R.id.dodo_talk_wink);
+            startAnimationFor(R.id.dodo_click);
+            useDodoFont(R.id.dodo_msg);
+            useDodoFont(R.id.dodo_title);
+        }
+    }
+
+    private void startAnimationFor(int dodo_talk_wink) {
+        ImageView dodoTalkImage = (ImageView)findViewById(dodo_talk_wink);
+        if (dodoTalkImage != null) {
+            AnimationDrawable frameAnimation = (AnimationDrawable) dodoTalkImage.getBackground();
+            // Start the animation (looped playback by default).
+            frameAnimation.start();
+        }
+    }
+
+    private void useDodoFont(int dodo_talk_wink) {
+        TextView dodoTextView = (TextView)findViewById(dodo_talk_wink);
+        if (dodoTextView != null) {
+            MathBookApplication.useDodoFont(dodoTextView);
+        }
     }
 
 }

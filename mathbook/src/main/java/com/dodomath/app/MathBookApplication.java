@@ -18,6 +18,8 @@ package com.dodomath.app;
 
 import android.app.Application;
 import android.content.Context;
+import android.graphics.Typeface;
+import android.widget.TextView;
 
 import com.dodomath.app.model.UserData;
 import com.dodomath.app.wxapi.ThirdPartyLoginHelper;
@@ -53,4 +55,14 @@ public class MathBookApplication extends Application {
         ThirdPartyLoginHelper.initSDK(this);
 
     }
+
+    public static Typeface dodoFont = null;
+
+    public synchronized static void useDodoFont(TextView tevtView) {
+        if (dodoFont == null) {
+            dodoFont = Typeface.createFromAsset(globalAppContext.getAssets(),"fonts/fangzheng_cartoon.ttf");
+        }
+        tevtView.setTypeface(dodoFont);
+    }
+
 }

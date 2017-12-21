@@ -29,14 +29,14 @@ public class ItemViewModel implements ViewModel {
     @NonNull
     public final String name;
 
-    public final @DrawableRes int imageRes;
+    //public final @DrawableRes int imageRes;
 
     public boolean hasImage() {
-        return imageRes != 0;
+        return false;//imageRes != 0;
     }
 
     public ItemViewModel(@NonNull final Item item, @NonNull final MessageHelper messageHelper, @NonNull final Navigator navigator) {
-        this.imageRes = item.name.contains("2") ? com.dodomath.app.R.drawable.some_image : 0;
+        //this.imageRes = item.name.contains("2") ? com.dodomath.app.R.drawable.some_image : 0;
         this.name = item.name.toUpperCase();
         this.onClicked = new Action() {
             @Override

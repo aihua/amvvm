@@ -10,43 +10,64 @@
         android:scaleType="fitXY"
         android:src="@drawable/bg_home_house" />
 
-
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#b0000000" />
 
     <ImageView
-        android:layout_alignParentBottom="true"
+        android:id="@+id/dodo_talk_wink"
         android:layout_width="150dp"
         android:layout_height="170dp"
+        android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
-        android:src="@drawable/dodo" />
+        android:background="@drawable/dodo_talk_wink" />
 
-    <ImageView
-        android:layout_alignParentBottom="true"
-        android:layout_width="145dp"
-        android:layout_height="170dp"
-        android:src="@drawable/dodo" />
+    <!--<ImageView-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_width="145dp"-->
+    <!--android:layout_height="170dp"-->
+    <!--android:src="@drawable/dodo" />-->
 
-    <ImageView
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="120dp"
-        android:layout_marginRight="15dp"
+    <TextView
+        android:id="@+id/dodo_msg"
         android:layout_width="match_parent"
-        android:scaleType="fitXY"
-        android:layout_height="93dp"
-        android:layout_marginBottom="0dp"
-        android:src="@drawable/bg_dodo_msg" />
+        android:layout_height="119dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="120dp"
+        android:textSize="12sp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/bg_dodo_msg"
+        android:gravity="center_vertical"
+        android:paddingTop="16dp"
+        android:paddingLeft="100dp"
+        android:paddingRight="80dp"
+        android:text="测试数据，测试数据测试数据，测试数据测试数据测试数据，测试数据测试数据测试数据测试数据" />
+
+    <TextView
+        android:id="@+id/dodo_title"
+        android:layout_width="140dp"
+        android:layout_height="63dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="61dp"
+        android:layout_marginLeft="120dp"
+        android:background="@drawable/bg_dodo_title"
+        android:gravity="right|center_vertical"
+        android:paddingRight="30dp"
+        android:paddingBottom="8dp"
+        android:text="渡渡" />
 
     <ImageView
+        android:id="@+id/dodo_click"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="120dp"
-        android:layout_width="121dp"
-        android:layout_height="53dp"
-        android:layout_marginBottom="46dp"
-        android:src="@drawable/bg_dodo_title" />
-
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="26dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/btn_click"
+        android:visibility="visible" />
 
 </RelativeLayout>
 

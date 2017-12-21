@@ -79,4 +79,8 @@ public class UserData {
         return userStatus;
     }
 
+    //API3 的范例：
+    public static String getTestApiUrl() {
+        return "http://180.76.177.111:8004/users/api/3/385/";
+    }
 }

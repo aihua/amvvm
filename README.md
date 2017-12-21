@@ -47,3 +47,12 @@ App Secret : 7e30da9a00f62fc5ef19212c52a4f9a2
    "country":"CN",
    "expiresIn":7200
 }
+
+支付宝支付：
+参考下面两个教程，服务端只需要用私钥给交易签名即可。支付的结果可以直接在手机端查询。
+https://docs.open.alipay.com/59/103665
+http://www.jianshu.com/p/2aa2e8748476
+
+如果按照文档来：APP和服务器作了两次交互-- 1. 从服务器拿到签名后的交易数据。  2. 通过服务器查询交易结果。
+
+

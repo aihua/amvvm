@@ -1,3 +1,5 @@
+Wifi password: 20171205 每月都换。
+
 Dodo mathbook for Android device
 
 

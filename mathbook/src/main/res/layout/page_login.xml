@@ -8,6 +8,8 @@
         <variable
             name="vm"
             type="com.dodomath.app.LoginViewModel" />
+
+        <import type="android.view.View" />
     </data>
 
     <FrameLayout
@@ -20,8 +22,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:visibility="visible">
+
             <LinearLayout
-                android:visibility="invisible"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -48,6 +50,21 @@
                     android:onClick="@{vm.onWechatLoginClick}"
                     android:src="@drawable/home_wechat" />
             </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/progress_bar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:visibility="@{vm.isWaiting ? View.VISIBLE : View.GONE}">
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:indeterminate="true" />
+
+            </RelativeLayout>
 
         </RelativeLayout>
 

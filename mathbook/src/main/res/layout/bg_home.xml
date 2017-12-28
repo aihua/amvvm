@@ -36,27 +36,24 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="120dp"
-        android:textSize="12sp"
         android:layout_marginRight="15dp"
         android:background="@drawable/bg_dodo_msg"
         android:gravity="center_vertical"
-        android:paddingTop="16dp"
         android:paddingLeft="100dp"
         android:paddingRight="80dp"
-        android:text="测试数据，测试数据测试数据，测试数据测试数据测试数据，测试数据测试数据测试数据测试数据" />
+        android:paddingTop="16dp"
+        android:text=""
+        android:textColor="#735234"
+        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/dodo_title"
         android:layout_width="140dp"
         android:layout_height="63dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="61dp"
+        android:layout_marginBottom="68dp"
         android:layout_marginLeft="120dp"
-        android:background="@drawable/bg_dodo_title"
-        android:gravity="right|center_vertical"
-        android:paddingRight="30dp"
-        android:paddingBottom="8dp"
-        android:text="渡渡" />
+        android:background="@drawable/bg_dodo_title" />
 
     <ImageView
         android:id="@+id/dodo_click"
@@ -67,7 +64,7 @@
         android:layout_marginBottom="26dp"
         android:layout_marginRight="40dp"
         android:background="@drawable/btn_click"
-        android:visibility="visible" />
+        android:visibility="gone" />
 
 </RelativeLayout>
 

@@ -16,6 +16,7 @@
 
 package com.dodomath.app;
 
+import android.databinding.Bindable;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -51,6 +52,7 @@ public class ItemViewModel implements ViewModel {
             }
         };
     }
+
 
     @Nullable
     public final Action onClicked;

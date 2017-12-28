@@ -1,10 +1,13 @@
 package com.dodomath.app;
 
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.VideoView;
 
 import com.dodomath.app.model.UserData;
 import com.dodomath.app.model.UserStatus;
@@ -33,34 +36,25 @@ public class SplashActivity extends BaseActivity {
     protected void onResume() {
         super.onResume();
 
+        VideoView videoView = (VideoView)findViewById(R.id.video_view);
+        String path = "android.resource://" + getPackageName() + "/" + R.raw.splash;
+        videoView.setVideoURI(Uri.parse(path));
+
+        videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                UserData.gotoAfterLoginPage(getNavigator());
+            }
+        });
+        videoView.start();
         //TODO: Use RxJava's pub/sub logic.
-        findViewById(R.id.page_bg).postDelayed(delayRunnable, 3000);
+        //findViewById(R.id.page_bg).postDelayed(delayRunnable, 3000);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
     }
-
-    private void gotoNextPage() {
-        //TODO: try to move this to ViewModel.
-        if (UserData.instance.getUserType() == UserType.UNKNOWN) {
-            getNavigator().navigateToLoginPage();
-        } else {
-            if (UserData.instance.getUserStatus() == UserStatus.UNEVALUATE) {
-                getNavigator().navigateToGuestLoginWebPage();
-            } else {
-                getNavigator().navigateToDodoNativeHome();
-            }
-        }
-    }
-
-    private Runnable delayRunnable = new Runnable() {
-        @Override
-        public void run() {
-            gotoNextPage();
-        }
-    };
 
 }
 

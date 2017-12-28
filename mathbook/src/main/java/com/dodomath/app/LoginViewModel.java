@@ -16,14 +16,18 @@
 
 package com.dodomath.app;
 
+import android.databinding.BaseObservable;
+import android.databinding.Bindable;
 import android.support.annotation.NonNull;
+import android.view.View;
 
 import com.dodomath.app.model.UserData;
+import com.dodomath.app.utils.HttpRequester;
 import com.manaschaudhari.android_mvvm.ViewModel;
 
 import io.reactivex.functions.Action;
 
-public class LoginViewModel implements ViewModel {
+public class LoginViewModel extends BaseObservable implements ViewModel {
     @NonNull
     private final Navigator navigator;
 
@@ -41,8 +45,8 @@ public class LoginViewModel implements ViewModel {
     public final Action onGuestLoginClick = new Action() {
         @Override
         public void run() throws Exception {
-            navigator.navigateToGuestLoginWebPage();
             UserData.instance.loginAsGuest();
+            loadData();
         }
     };
 
@@ -61,8 +65,38 @@ public class LoginViewModel implements ViewModel {
     };
 
     public void navigateToLoginPage() {
-            navigator.navigateToLoginPage();
-    };
+        navigator.navigateToLoginPage();
+    }
 
+    ;
+
+    private boolean isLoading = false;
+    public void loadData() {
+        setLoading(true);
+
+        HttpRequester.executeAsync(UserData.getTestApiUrl(), new HttpRequester.Listener() {
+
+            @Override
+            public void onGetDataSucceed(byte[] data) {
+                setLoading(false);
+                UserData.instance.parseDataFromServer(new String(data));
+                UserData.gotoAfterLoginPage(navigator);
+            }
+
+            @Override
+            public void onGetDataFailed(String error) {
+                setLoading(false);
+            }
+        });
+    }
+
+    @Bindable
+    public boolean isLoading() {
+        return isLoading;
+    }
+
+    public void setLoading(boolean loading) {
+        isLoading = loading;
+    }
 
 }
